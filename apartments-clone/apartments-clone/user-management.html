@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="User Management - Admin Hub">
+    <title>User Management | Admin Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dashboard-body">
+
+    <!-- Top Navigation Bar (Dashboard specific) -->
+    <header class="site-header dashboard-header">
+        <div class="header-container">
+            <div class="logo-section">
+                <a href="index.html" class="logo-link">
+                    <div class="logo-icon"><i class="fa-solid fa-house-chimney"></i></div>
+                    <span style="font-size: 20px;">Apartments.com</span>
+                </a>
+            </div>
+            
+            <div class="dashboard-user-nav">
+                <button class="btn-icon"><i class="fa-regular fa-bell"></i></button>
+                <button class="btn-icon"><i class="fa-solid fa-gear"></i></button>
+                <div class="user-profile">
+                    <div class="avatar" style="background-color: #6a1b9a;">AD</div>
+                    <span class="user-name">System Admin</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="dashboard-sidebar">
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="sidebar-link"><i class="fa-solid fa-chart-line"></i> Command Center</a>
+                <a href="#" class="sidebar-link"><i class="fa-solid fa-building"></i> Properties</a>
+                <a href="leasing.html" class="sidebar-link"><i class="fa-solid fa-key"></i> Leasing & Tenants</a>
+                <div style="margin: 15px 20px 5px; font-size: 12px; font-weight: 700; color: var(--gray-text); text-transform: uppercase;">Admin Tools</div>
+                <a href="user-management.html" class="sidebar-link active"><i class="fa-solid fa-users-gear"></i> User Management</a>
+                <a href="moderation.html" class="sidebar-link"><i class="fa-solid fa-shield-cat"></i> Content Moderation <span class="badge warning">12</span></a>
+                <a href="#" class="sidebar-link"><i class="fa-solid fa-gavel"></i> Disputes <span class="badge warning">3</span></a>
+                <a href="#" class="sidebar-link"><i class="fa-solid fa-shield-halved"></i> Access Roles</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="dashboard-main">
+            <div class="dashboard-header-text" style="display: flex; justify-content: space-between; align-items: flex-end;">
+                <div>
+                    <h1>User Management</h1>
+                    <p>Oversee all accounts, manage platform access, and handle disputes.</p>
+                </div>
+                <button class="btn-primary"><i class="fa-solid fa-user-plus"></i> Invite User</button>
+            </div>
+
+            <div class="admin-data-card">
+                <!-- Table Controls Container -->
+                <div class="table-controls">
+                    <div class="search-input-wrapper" style="width: 300px;">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" class="search-input" placeholder="Search users by name or email">
+                    </div>
+                    
+                    <div class="filter-controls">
+                        <select class="form-input" style="padding: 10px; min-width: 150px;">
+                            <option>All Roles</option>
+                            <option>Property Owner</option>
+                            <option>Renter</option>
+                            <option>Admin</option>
+                        </select>
+                        <select class="form-input" style="padding: 10px; min-width: 150px;">
+                            <option>All Statuses</option>
+                            <option>Active</option>
+                            <option>Suspended</option>
+                            <option>Pending Verify</option>
+                        </select>
+                        <button class="btn-outline"><i class="fa-solid fa-file-export"></i> Export</button>
+                    </div>
+                </div>
+
+                <!-- Data Table -->
+                <div class="table-responsive">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>User</th>
+                                <th>Role</th>
+                                <th>Date Added</th>
+                                <th>Status</th>
+                                <th class="text-right">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Row 1 -->
+                            <tr>
+                                <td>
+                                    <div class="user-cell">
+                                        <div class="avatar-small">JD</div>
+                                        <div>
+                                            <div class="user-fullname">John Doe</div>
+                                            <div class="user-email">john.doe@example.com</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="role-tag">Property Owner</span></td>
+                                <td>Mar 12, 2024</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td class="text-right">
+                                    <div class="action-menu">
+                                        <button class="btn-icon-small" title="Manage Access"><i class="fa-solid fa-key"></i></button>
+                                        <button class="btn-icon-small" title="View Profile"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            
+                            <!-- Row 2 -->
+                            <tr class="row-warning">
+                                <td>
+                                    <div class="user-cell">
+                                        <div class="avatar-small" style="background-color: #ff9800;">SW</div>
+                                        <div>
+                                            <div class="user-fullname">Sarah Williams</div>
+                                            <div class="user-email">sarah.w@rentermail.com</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="role-tag">Renter</span></td>
+                                <td>Feb 28, 2024</td>
+                                <td>
+                                    <div style="display: flex; gap: 5px; flex-direction: column; align-items: flex-start;">
+                                        <span class="status-badge status-active">Active</span>
+                                        <span class="status-badge status-dispute"><i class="fa-solid fa-gavel"></i> Open Dispute</span>
+                                    </div>
+                                </td>
+                                <td class="text-right">
+                                    <div class="action-menu">
+                                        <button class="btn-contact btn-small" style="font-size: 12px; padding: 4px 8px;">Resolve Dispute</button>
+                                        <button class="btn-icon-small" title="Manage Access"><i class="fa-solid fa-key"></i></button>
+                                        <button class="btn-icon-small" title="View Profile"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Row 3 -->
+                            <tr>
+                                <td>
+                                    <div class="user-cell">
+                                        <div class="avatar-small" style="background-color: #4CAF50;">MC</div>
+                                        <div>
+                                            <div class="user-fullname">Mike Chen</div>
+                                            <div class="user-email">mike.properties@invest.com</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="role-tag">Property Owner</span></td>
+                                <td>Jan 15, 2024</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td class="text-right">
+                                    <div class="action-menu">
+                                        <button class="btn-icon-small" title="Manage Access"><i class="fa-solid fa-key"></i></button>
+                                        <button class="btn-icon-small" title="View Profile"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Row 4 -->
+                            <tr class="row-suspended">
+                                <td>
+                                    <div class="user-cell">
+                                        <div class="avatar-small" style="background-color: #f44336;">AJ</div>
+                                        <div>
+                                            <div class="user-fullname">Alex Johnson</div>
+                                            <div class="user-email">alex.j@fakeemail.com</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="role-tag">Renter</span></td>
+                                <td>Mar 01, 2024</td>
+                                <td><span class="status-badge status-suspended">Suspended</span></td>
+                                <td class="text-right">
+                                    <div class="action-menu">
+                                        <button class="btn-icon-small" title="Manage Access"><i class="fa-solid fa-key"></i></button>
+                                        <button class="btn-icon-small" title="View Profile"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Pagination -->
+                <div class="pagination-footer">
+                    <span class="page-info">Showing 1 to 4 of 150 users</span>
+                    <div class="page-controls">
+                        <button class="btn-outline" disabled>Previous</button>
+                        <button class="btn-outline active">1</button>
+                        <button class="btn-outline">2</button>
+                        <button class="btn-outline">3</button>
+                        <button class="btn-outline">Next</button>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+</body>
+</html>

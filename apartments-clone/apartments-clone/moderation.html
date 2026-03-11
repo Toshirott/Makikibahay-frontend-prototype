@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Content & Review Moderation - Admin Hub">
+    <title>Moderation Hub | Admin Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dashboard-body">
+
+    <!-- Top Navigation Bar (Dashboard specific) -->
+    <header class="site-header dashboard-header">
+        <div class="header-container">
+            <div class="logo-section">
+                <a href="index.html" class="logo-link">
+                    <div class="logo-icon"><i class="fa-solid fa-house-chimney"></i></div>
+                    <span style="font-size: 20px;">Apartments.com</span>
+                </a>
+            </div>
+            
+            <div class="dashboard-user-nav">
+                <button class="btn-icon"><i class="fa-regular fa-bell"></i></button>
+                <button class="btn-icon"><i class="fa-solid fa-gear"></i></button>
+                <div class="user-profile">
+                    <div class="avatar" style="background-color: #6a1b9a;">AD</div>
+                    <span class="user-name">System Admin</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="dashboard-sidebar">
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="sidebar-link"><i class="fa-solid fa-chart-line"></i> Command Center</a>
+                <a href="#" class="sidebar-link"><i class="fa-solid fa-building"></i> Properties</a>
+                <a href="leasing.html" class="sidebar-link"><i class="fa-solid fa-key"></i> Leasing & Tenants</a>
+                
+                <div style="margin: 15px 20px 5px; font-size: 12px; font-weight: 700; color: var(--gray-text); text-transform: uppercase;">Admin Tools</div>
+                <a href="user-management.html" class="sidebar-link"><i class="fa-solid fa-users-gear"></i> User Management</a>
+                <a href="moderation.html" class="sidebar-link active"><i class="fa-solid fa-shield-cat"></i> Content Moderation <span class="badge warning">12</span></a>
+                <a href="#" class="sidebar-link"><i class="fa-solid fa-gavel"></i> Disputes</a>
+                <a href="#" class="sidebar-link"><i class="fa-solid fa-shield-halved"></i> Access Roles</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="dashboard-main">
+            <div class="dashboard-header-text">
+                <h1>Content & Review Moderation</h1>
+                <p>Ensure community standards by reviewing flagged properties and user reviews.</p>
+            </div>
+
+            <div class="moderation-layout">
+                <!-- Left Column: Moderation Queue -->
+                <section class="moderation-queue">
+                    <div class="queue-toolbar">
+                        <div class="filter-controls">
+                            <select class="form-input" style="padding: 10px;">
+                                <option>All Flagged Content</option>
+                                <option>Property Photos</option>
+                                <option>Tenant Reviews</option>
+                                <option>Suspicious Listings</option>
+                            </select>
+                            <select class="form-input" style="padding: 10px;">
+                                <option>Sort: Oldest First</option>
+                                <option>Sort: Most Flagged</option>
+                            </select>
+                        </div>
+                        <span class="queue-count text-muted">12 items awaiting review</span>
+                    </div>
+
+                    <!-- Moderation Item 1: Review -->
+                    <div class="mod-card">
+                        <div class="mod-card-header">
+                            <span class="mod-type type-review"><i class="fa-regular fa-comment-dots"></i> Flagged Review</span>
+                            <span class="mod-time">Reported 2 hours ago</span>
+                        </div>
+                        <div class="mod-card-content">
+                            <h3 class="mod-target">"Terrible management, do not rent here!"</h3>
+                            <p class="mod-desc">The user used profanity and explicitly named individual leasing agents which violates our PII policy.</p>
+                            
+                            <div class="mod-meta">
+                                <div><strong>Reported By:</strong> 3 Users</div>
+                                <div><strong>Target Property:</strong> The Grand View Apartments</div>
+                                <div><strong>Author:</strong> @AngryTenant99</div>
+                            </div>
+                        </div>
+                        <div class="mod-actions">
+                            <button class="btn-outline btn-small"><i class="fa-solid fa-eye"></i> View Full Context</button>
+                            <div style="margin-left: auto; display: flex; gap: 10px;">
+                                <button class="btn-outline btn-small" style="color: var(--primary-green); border-color: var(--primary-green);"><i class="fa-solid fa-check"></i> Approve (Ignore Report)</button>
+                                <button class="btn-primary btn-small" style="background-color: #f44336;"><i class="fa-solid fa-ban"></i> Remove Content</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Moderation Item 2: Photo -->
+                    <div class="mod-card">
+                        <div class="mod-card-header">
+                            <span class="mod-type type-photo"><i class="fa-regular fa-image"></i> Flagged Photo</span>
+                            <span class="mod-time">Reported 5 hours ago</span>
+                        </div>
+                        <div class="mod-card-content flex-row">
+                            <div class="mod-image-preview">
+                                <div class="image-placeholder"><i class="fa-solid fa-camera-retro"></i> Image Redacted by System Filter</div>
+                            </div>
+                            <div class="mod-details">
+                                <h3 class="mod-target">Inappropriate Listing Image</h3>
+                                <p class="mod-desc">Automated system flagged this listing photo for containing potentially restricted content.</p>
+                                
+                                <div class="mod-meta">
+                                    <div><strong>Reported By:</strong> Auto-Moderator AI</div>
+                                    <div><strong>Target Property:</strong> Downtown Lofts #4A</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mod-actions">
+                            <button class="btn-outline btn-small"><i class="fa-solid fa-eye"></i> View Image (Warning)</button>
+                            <div style="margin-left: auto; display: flex; gap: 10px;">
+                                <button class="btn-outline btn-small" style="color: var(--primary-green); border-color: var(--primary-green);"><i class="fa-solid fa-check"></i> False Positive</button>
+                                <button class="btn-primary btn-small" style="background-color: #f44336;"><i class="fa-solid fa-trash"></i> Delete Image</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Right Column: Educational Resources & Policies -->
+                <aside class="moderation-resources">
+                    <div class="resource-card">
+                        <h3><i class="fa-solid fa-book"></i> Moderation Guidelines</h3>
+                        <p>Quick references for making consistent moderation decisions.</p>
+                        <ul class="resource-list">
+                            <li><a href="#"><i class="fa-regular fa-file-pdf"></i> Community Standards Manual</a></li>
+                            <li><a href="#"><i class="fa-solid fa-link"></i> Fair Housing Act Guidelines</a></li>
+                            <li><a href="#"><i class="fa-regular fa-file-pdf"></i> Identifying Fake Listings</a></li>
+                            <li><a href="#"><i class="fa-solid fa-link"></i> Review Dispute Process Workflow</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="resource-card bg-highlight">
+                        <h3><i class="fa-solid fa-circle-exclamation"></i> Recent Policy Updates</h3>
+                        <div class="update-item">
+                            <h4>March 10, 2024</h4>
+                            <p>Updated rules regarding aggressive breed restrictions in property descriptions.</p>
+                        </div>
+                        <div class="update-item">
+                            <h4>February 22, 2024</h4>
+                            <p>New AI filters deployed for identifying watermarked competitor photos.</p>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+
+        </main>
+    </div>
+
+</body>
+</html>

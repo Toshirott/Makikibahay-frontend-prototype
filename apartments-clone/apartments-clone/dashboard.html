@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Property Owner Dashboard - Apartments.com Clone">
+    <title>Owner Dashboard Command Center</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dashboard-body">
+
+    <!-- Top Navigation Bar (Dashboard specific) -->
+    <header class="site-header dashboard-header">
+        <div class="header-container">
+            <div class="logo-section">
+                <a href="index.html" class="logo-link">
+                    <div class="logo-icon"><i class="fa-solid fa-house-chimney"></i></div>
+                    <span style="font-size: 20px;">Apartments.com</span>
+                </a>
+            </div>
+            
+            <div class="dashboard-user-nav">
+                <button class="btn-icon"><i class="fa-regular fa-bell"></i><span class="notification-badge">3</span></button>
+                <button class="btn-icon"><i class="fa-solid fa-gear"></i></button>
+                <div class="user-profile">
+                    <div class="avatar">PM</div>
+                    <span class="user-name">Property Manager</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="dashboard-sidebar">
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="sidebar-link active"><i class="fa-solid fa-chart-line"></i> Command Center</a>
+                <a href="#" class="sidebar-link"><i class="fa-solid fa-building"></i> My Properties</a>
+                <a href="leasing.html" class="sidebar-link"><i class="fa-solid fa-key"></i> Leasing & Tenants</a>
+                <a href="#" class="sidebar-link"><i class="fa-regular fa-envelope"></i> Messages <span class="badge">5</span></a>
+                <a href="#" class="sidebar-link"><i class="fa-solid fa-file-contract"></i> Applications <span class="badge">2</span></a>
+                <a href="#" class="sidebar-link"><i class="fa-solid fa-wrench"></i> Maintenance <span class="badge warning">1</span></a>
+                <a href="#" class="sidebar-link"><i class="fa-solid fa-money-check-dollar"></i> Rent Collection</a>
+                
+                <div style="margin: 15px 20px 5px; font-size: 12px; font-weight: 700; color: var(--gray-text); text-transform: uppercase;">Admin Tools</div>
+                <a href="user-management.html" class="sidebar-link"><i class="fa-solid fa-users-gear"></i> User Management</a>
+                <a href="moderation.html" class="sidebar-link"><i class="fa-solid fa-shield-cat"></i> Content Moderation <span class="badge warning">12</span></a>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="add-property.html" class="btn-primary sidebar-btn"><i class="fa-solid fa-plus"></i> Add Property</a>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="dashboard-main">
+            <div class="dashboard-header-text">
+                <h1>Welcome back!</h1>
+                <p>Here's what's happening with your properties today.</p>
+            </div>
+
+            <!-- Portfolio Overview Metrics -->
+            <section class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-icon blue"><i class="fa-solid fa-building"></i></div>
+                    <div class="metric-content">
+                        <div class="metric-label">Active Listings</div>
+                        <div class="metric-value">12</div>
+                        <div class="metric-trend positive"><i class="fa-solid fa-arrow-up"></i> +2 this month</div>
+                    </div>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-icon orange"><i class="fa-solid fa-key"></i></div>
+                    <div class="metric-content">
+                        <div class="metric-label">Vacancy Rate</div>
+                        <div class="metric-value">4.5%</div>
+                        <div class="metric-trend negative"><i class="fa-solid fa-arrow-up"></i> +1.2% this month</div>
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-icon green"><i class="fa-solid fa-dollar-sign"></i></div>
+                    <div class="metric-content">
+                        <div class="metric-label">Monthly Rent Collected</div>
+                        <div class="metric-value">$34,500</div>
+                        <div class="metric-trend positive"><i class="fa-solid fa-arrow-up"></i> 98% collected</div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="dashboard-columns">
+                <!-- Actionable Tasks Queue -->
+                <section class="dashboard-column task-column">
+                    <div class="widget-card">
+                        <div class="widget-header">
+                            <h2>Action Items</h2>
+                            <button class="btn-text">View All</button>
+                        </div>
+                        <div class="task-list">
+                            <!-- Task Item 1 -->
+                            <div class="task-item urgent">
+                                <div class="task-icon"><i class="fa-solid fa-wrench"></i></div>
+                                <div class="task-content">
+                                    <h4>Emergency: Water Leak</h4>
+                                    <p>Unit 4B - The Grand View Apartments</p>
+                                </div>
+                                <button class="btn-outline btn-small">Review</button>
+                            </div>
+
+                            <!-- Task Item 2 -->
+                            <div class="task-item">
+                                <div class="task-icon"><i class="fa-solid fa-file-contract"></i></div>
+                                <div class="task-content">
+                                    <h4>Pending Application</h4>
+                                    <p>John Doe - Unit 12A - Sunny Side</p>
+                                </div>
+                                <button class="btn-outline btn-small">Review</button>
+                            </div>
+
+                            <!-- Task Item 3 -->
+                            <div class="task-item">
+                                <div class="task-icon"><i class="fa-regular fa-envelope"></i></div>
+                                <div class="task-content">
+                                    <h4>New Lead Message</h4>
+                                    <p>Sarah Smith is asking about availability.</p>
+                                </div>
+                                <button class="btn-outline btn-small">Reply</button>
+                            </div>
+                            
+                            <!-- Task Item 4 -->
+                            <div class="task-item">
+                                <div class="task-icon"><i class="fa-regular fa-envelope"></i></div>
+                                <div class="task-content">
+                                    <h4>New Lead Message</h4>
+                                    <p>Mike Johnson wants to schedule a tour.</p>
+                                </div>
+                                <button class="btn-outline btn-small">Reply</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Market Snapshot -->
+                <section class="dashboard-column snapshot-column">
+                    <div class="widget-card">
+                        <div class="widget-header">
+                            <h2>Market Snapshot</h2>
+                            <button class="btn-text"><i class="fa-solid fa-rotate-right"></i></button>
+                        </div>
+                        <div class="snapshot-content">
+                            <p class="snapshot-desc">Rent Comparable Report for your primary market (Cityville, ST)</p>
+                            
+                            <div class="snapshot-stat-row">
+                                <div class="snap-stat">
+                                    <span class="snap-label">Avg. 1 Bed Market Rent</span>
+                                    <span class="snap-value">$1,850</span>
+                                </div>
+                                <div class="snap-stat">
+                                    <span class="snap-label">Your Avg. 1 Bed</span>
+                                    <span class="snap-value success">$1,900</span>
+                                </div>
+                            </div>
+
+                            <div class="snapshot-stat-row">
+                                <div class="snap-stat">
+                                    <span class="snap-label">Avg. 2 Bed Market Rent</span>
+                                    <span class="snap-value">$2,400</span>
+                                </div>
+                                <div class="snap-stat">
+                                    <span class="snap-label">Your Avg. 2 Bed</span>
+                                    <span class="snap-value warning">$2,300</span>
+                                </div>
+                            </div>
+
+                            <div class="market-chart-placeholder">
+                                <div class="chart-bar" style="height: 60%;" title="Jan"></div>
+                                <div class="chart-bar" style="height: 75%;" title="Feb"></div>
+                                <div class="chart-bar" style="height: 65%;" title="Mar"></div>
+                                <div class="chart-bar active-bar" style="height: 85%;" title="Apr"></div>
+                                <div class="chart-bar" style="height: 90%;" title="May"></div>
+                                <div class="chart-bar" style="height: 100%;" title="Jun"></div>
+                            </div>
+                            <p class="chart-label">Neighborhood Rent Trend over 6 months</p>
+                            
+                            <button class="btn-block btn-outline" style="margin-top: 15px;">View Full Report</button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
